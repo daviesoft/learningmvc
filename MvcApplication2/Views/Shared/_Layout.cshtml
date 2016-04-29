@@ -1,0 +1,16 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title - Simple Blogg</title>
+</head>
+<body>
+    <div><h1>@ViewBag.title</h1></div>
+    <div>
+        @RenderSection("SectionName", false)
+        @RenderBody()
+    </div>
+</body>
+</html>
