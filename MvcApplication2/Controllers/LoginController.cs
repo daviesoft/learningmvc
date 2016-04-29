@@ -16,10 +16,21 @@ namespace SimpleBlog.Controllers
         {
             return View();
         }
+
+        //POST: /Login/
         [HttpPost]
         public ActionResult Index (AuthLogin form)
         {
-            return Content("Hello there " + form.Username +", how are you today?");
+            if(!ModelState.IsValid)
+            return View();
+
+            if(form.Username !="Test")
+            { 
+                ModelState.AddModelError("Username", "The username does not exits?");
+                return View(form);
+            }
+
+            return Url("~/Welcome");
         }
 
     }
